@@ -24,12 +24,18 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
   if (!(count_column %in% colnames(data))) {
     stop("count_column must be a column name in data")
   }
+  expand.grid(unique(df$Round), unique(df$Site), unique(df$Phyla)) %>%
+    rename(Round = Var1 , Site = Var2, Phyla = Var3) %>%
+    left_join(df, on = c("Round", "Site", "Phyla")) %>%
+    # replace nas with 0
+    mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
+    group_by(Round, Site, Phyla) %>%
+    summarize(Total = sum(Count)) %>%
+    mutate(Perc = Total / sum(Total)) %>%
+    ggplot(aes(x= Round, y = Perc, fill = Phyla)) + 
+    geom_area(stat= "identity", position = "fill") + 
+    facet_wrap(~Site)
 
-  data %>%
-    mutate(Round = as.numeric(Round),
-    #value = as.numeric({{count_column}})
-    ) %>%
-    ggplot(aes(x  = Round, y = Count, fill = Phyla)) +
-      geom_bar(stat = "identity", position = "fill") +
-      facet_wrap(~Site, ncol = 1)
 }
+
+
