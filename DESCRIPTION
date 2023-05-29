@@ -8,7 +8,7 @@ Authors@R:
 Author : Christian Coffman [aut, cre],
 Maintainer: Christian Coffman <coffm049@umn.edu>
 Description: This package provides convenient functions for analyzing and vizualizing algal bloom data (algalViz), water column data (viz_column) and plans to add future convenience functions for common analyses 
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.5.0), ggplot2, dplyr
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
