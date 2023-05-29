@@ -4,8 +4,13 @@ library(ggplot2)
 source("../../R/algalViz.R")
 
 
+
 test_that(desc = "Test algalViz created a ggplot object", code = {
-  df <- read.csv("../../Example/algae.csv")
+  path <- test_path("testdata", "algae.csv")
+  df <- read.csv(path)
   p <- algalViz(df)
-  expect_that( object = p, condition = expect_no_error(p))
+  expect_true("ggplot" %in% class(p))
 })
+
+
+

@@ -1,20 +1,15 @@
-Package: ogwtools 
-Type: Package
-Title: WATER QUALITY VIZUALIZATION TOOLS 
+Package: ogwtools
+Title: Convenient analysis and visualization functions for water quality data
 Version: 0.0.0.9000
-Date: 2023-05-28
-Authors@R:
-    person("Christian", "Coffman", email = "coffm049@umn.edu", role = c("aut", "cre"))
-Author : Christian Coffman [aut, cre],
-Maintainer: Christian Coffman <coffm049@umn.edu>
-Description: This package provides convenient functions for analyzing and vizualizing algal bloom data (algalViz), water column data (viz_column) and plans to add future convenience functions for common analyses 
-Depends: R (>= 3.5.0), ggplot2, dplyr
+Authors@R: 
+    person("Christian", "Coffman", , "coffm049@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Creates a set of convient analysis and visuzliation tools.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-URL: https:github.com/coffm049/ogwtools
+RoxygenNote: 7.1.2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
