@@ -31,10 +31,10 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
     mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
     group_by(Round, Site, Phyla) %>%
     summarize(Total = sum(Count)) %>%
-    mutate(Perc = Total / sum(Total)) %>%
-    ggplot(aes(x= Round, y = Perc, fill = Phyla)) + 
-    geom_area(stat= "identity", position = "fill") + 
-    facet_wrap(~Site)
+    mutate(Percent = Total / sum(Total) * 100) %>%
+    ggplot(aes(x= Round, y = Percent, fill = Phyla)) +
+    geom_area(stat= "identity", position = "fill") +
+    facet_wrap(~Site,  labeller = label_both)
 
 }
 
