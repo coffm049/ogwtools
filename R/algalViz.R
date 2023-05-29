@@ -1,6 +1,6 @@
 #' algalViz
 #'
-#' # utility function to help in vizualizing algal distributions across sites 
+#' utility function to help in vizualizing algal distributions across sites 
 #' @param data A dataframe
 #' @param proportion boolean, wether to report proportions or total counts
 #' @param count_column string, column name of count data

@@ -1,0 +1,12 @@
+Package: ogwtools 
+Type: Package
+Title: WATER QUALITY VIZUALIZATION TOOLS 
+Version: 0.0.0.9000
+Authors@R:
+    person("Christian", "Coffman", "coffm049@umn.edu", role = c("aut", "cre"))
+Description: This package provides convenient functions for analyzing and vizualizing algal bloom data (algalViz), water column data (viz_column) and plans to add future convenience functions for common analyses 
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
