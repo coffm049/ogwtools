@@ -18,3 +18,9 @@ So far, there are only a few functions, but this is a work in progress and will 
 
 # Further suggestions
 If you have further suggestions, please make an issue
+
+Got dependencies using 
+```r
+pack <- available.packages()
+pack["ggplot2","Depends"]
+```
