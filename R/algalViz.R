@@ -25,16 +25,16 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
     stop("count_column must be a column name in data")
   }
   expand.grid(unique(df$Round), unique(df$Site), unique(df$Phyla)) %>%
-    rename(Round = Var1 , Site = Var2, Phyla = Var3) %>%
-    left_join(df, on = c("Round", "Site", "Phyla")) %>%
+    dplyr::rename(Round = Var1 , Site = Var2, Phyla = Var3) %>%
+    dplyr::left_join(df, on = c("Round", "Site", "Phyla")) %>%
     # replace nas with 0
-    mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
-    group_by(Round, Site, Phyla) %>%
-    summarize(Total = sum(Count)) %>%
-    mutate(Percent = Total / sum(Total) * 100) %>%
-    ggplot(aes(x= Round, y = Percent, fill = Phyla)) +
-    geom_area(stat= "identity", position = "fill") +
-    facet_wrap(~Site,  labeller = label_both)
+    dplyr::mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
+    dplyr::group_by(Round, Site, Phyla) %>%
+    dplyr::summarize(Total = sum(Count)) %>%
+    dplyr::mutate(Percent = Total / sum(Total) * 100) %>%
+    ggplot2::ggplot(aes(x= Round, y = Percent, fill = Phyla)) +
+    ggplot2::geom_area(stat= "identity", position = "fill") +
+    ggplot2::facet_wrap(~Site,  labeller = label_both)
 
 }
 

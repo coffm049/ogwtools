@@ -10,10 +10,10 @@
 #' @export
 waterColumnViz <- function(df, variable) {
   # ggplot where the x aesthetic is the variable of interest
-  ggplot(data = df, aes(x = get(variable), y = depth, col = factor(round), group= round)) +
-    geom_path() +
-    facet_wrap(~site) +
-    xlab("") +
+  ggplot2::ggplot(data = df, aes(x = get(variable), y = depth, col = factor(round), group= round)) +
+    ggplot2::geom_path() +
+    ggplot2::facet_wrap(~site) +
+    ggplot2::xlab("") +
     # set legend title
-    labs(col = "Round")
+    ggplot2::labs(col = "Round")
 }
