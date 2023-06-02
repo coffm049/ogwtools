@@ -13,6 +13,9 @@ algalViz(data, proportion = T, count_column = "Count", facet_var = NULL)
 
 \item{count_column}{string, column name of count data}
 }
+\value{
+ggplot ggplot vizualization object
+}
 \description{
 utility function to help in vizualizing algal distributions across sites
 }
