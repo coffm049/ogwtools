@@ -8,6 +8,7 @@
 #' @import dplyr
 #' @import ggplot2
 #' @export
+#' @return ggplot ggplot vizualization object
 algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NULL) {
   # check types
   if (!is.data.frame(data)) {
@@ -35,7 +36,6 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
     ggplot2::ggplot(aes(x= Round, y = Percent, fill = Phyla)) +
     ggplot2::geom_area(stat= "identity", position = "fill") +
     ggplot2::facet_wrap(~Site,  labeller = label_both)
-
 }
 
 

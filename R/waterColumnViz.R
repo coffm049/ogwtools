@@ -8,6 +8,7 @@
 #' @examples myfunction(X,Y)
 #' @import ggplot2
 #' @export
+#' @return ggplot plot
 waterColumnViz <- function(df, variable) {
   # ggplot where the x aesthetic is the variable of interest
   ggplot2::ggplot(data = df, aes(x = get(variable), y = depth, col = factor(round), group= round)) +
