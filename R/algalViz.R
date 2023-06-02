@@ -32,6 +32,7 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
     dplyr::mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
     dplyr::group_by(Round, Site, Phyla) %>%
     dplyr::summarize(Total = sum(Count)) %>%
+    dplyr::mutate(Site = factor(Site)) %>%
     dplyr::mutate(Percent = Total / sum(Total) * 100) %>%
     ggplot2::ggplot(aes(x= Round, y = Percent, fill = Phyla)) +
     ggplot2::geom_area(stat= "identity", position = "fill") +
