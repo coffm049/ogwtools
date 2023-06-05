@@ -3,8 +3,4 @@
 export(algalViz)
 export(nutsThroughTime)
 export(waterColumnViz)
-import("dplyr,")
-import(dplyr)
-import(ggplot2)
-import(tidyr)
 importFrom(magrittr,"%>%")

@@ -14,7 +14,10 @@ Depends:
     R (>= 3.5.0)
 Imports: 
     ggplot2, 
-    dplyr
-Suggests: 
+    dplyr,
+    tidyr
+Suggests:
+    devtools,
+    roxygen2,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -17,4 +17,5 @@ Creates a ggplot object of nutrient data through time. Specifically, it creates 
 }
 \examples{
 nutsThroughTime(data)
+nutsThroughTime(df)
 }

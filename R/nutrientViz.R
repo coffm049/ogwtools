@@ -5,7 +5,6 @@
 #' parameter combination. Requires columns, Type, Date, Site, Round, Year in any order
 #' @param data 
 #' @examples cleanNuts(data)
-#' @import dplyr, tidyr
 #' @importFrom magrittr %>%
 #' @return tall clean dataframe for vizualization 
 cleanNuts <- function(data) {
@@ -34,17 +33,15 @@ cleanNuts <- function(data) {
 #' @param dataframe with site, date, and parameters in other columns 
 #' @examples nutsThroughTime(data)
 #' @export
-#' @example nutsThroughTime(df)
-#' @import dplyr
-#' @import ggplot2
+#' @examples nutsThroughTime(df)
 #' @importFrom magrittr %>%
 #' @return ggplot object
 nutsThroughTime <- function(data) {
   cleanNuts(data) %>%
       dplyr::mutate(day1=ifelse(as.numeric(Site)<8,"West","East"),
              day1 = factor(day1, levels = c("West", "East"))) %>%
-    ggplot2::ggplot(aes(x=Date, y=value))+
-    ggplot2::geom_point()+
+    ggplot2::ggplot(aes(x=Date, y=value)) +
+    ggplot2::geom_point() +
     ggplot2::geom_smooth(se = FALSE, span = 1) +
     ggplot2::facet_grid(row= vars(Parameter), cols=vars(Site), scales = "free_y",labeller = label_wrap_gen(width=10)) +
     ggplot2::labs(title = "Nutrient Data", x='2022 Dates', y = 'Parameter Value', subtitle = 'Site')+

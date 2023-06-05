@@ -5,8 +5,6 @@
 #' @param proportion boolean, wether to report proportions or total counts
 #' @param count_column string, column name of count data
 #' @examples algalViz(data= df, standardize = T, count_value = "Count")
-#' @import dplyr
-#' @import ggplot2
 #' @export
 #' @return ggplot ggplot vizualization object
 algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NULL) {

@@ -4,11 +4,10 @@
 \alias{waterColumnViz}
 \title{waterColumnViz}
 \usage{
-waterColumnViz(df, variable)
+waterColumnViz(df, parameter, xlabel)
 }
 \arguments{
-\item{df}{dataframe with sites, rounds, depth, and water quality variables
-of interes in long format}
+\item{df}{dataframe with round, date, site, depth, followed by parameter columns}
 
 \item{variable}{string specifyning which variable to vizualize}
 }
@@ -18,6 +17,10 @@ ggplot plot
 \description{
 Vizualize water quality variables along the water column for multiple time
 points and multiple site
+}
+\details{
+A function that helps water quality data vizualization for a single water quality
+parameter measured over multiple sites and depths and days
 }
 \examples{
 myfunction(X,Y)
