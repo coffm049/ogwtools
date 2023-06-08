@@ -1,23 +1,20 @@
 Package: ogwtools
-Title: Convenient analysis and visualization functions for water quality data
+Title: An Amazing Shiny App
 Version: 0.0.0.9000
 Authors@R: 
-    person("Christian", "Coffman", , "coffm049@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Creates a set of convient analysis and visuzliation tools.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
-Depends: 
-    R (>= 3.5.0)
+    person(given = "firstname",
+           family = "lastname",
+           role = c("aut", "cre"),
+           email = "your@email.com")
+Description: What the package does (one paragraph).
+License: What license is it under?
 Imports: 
-    ggplot2, 
-    dplyr,
-    tidyr
-Suggests:
-    devtools,
-    roxygen2,
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+    config (>= 0.3.1),
+    golem (>= 0.4.1),
+    shiny (>= 1.7.3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    spelling
+Language: en-US

@@ -25,7 +25,7 @@ algalViz <- function(data, proportion = T, count_column = "Count", facet_var= NU
   }
   expand.grid(unique(df$Round), unique(df$Site), unique(df$Phyla)) %>%
     dplyr::rename(Round = Var1 , Site = Var2, Phyla = Var3) %>%
-    dplyr::left_join(df, on = c("Round", "Site", "Phyla")) %>%
+    dplyr::left_join(df, by = c("Round", "Site", "Phyla")) %>%
     # replace nas with 0
     dplyr::mutate(Count = ifelse(is.na(Count), 0, Count)) %>%
     dplyr::group_by(Round, Site, Phyla) %>%
